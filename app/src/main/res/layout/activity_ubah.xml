@@ -1,9 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="6dp"
+    android:orientation="vertical"
     tools:context=".Activity.UbahActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="16dp"
+        android:gravity="center_horizontal"
+        android:text="Ubah Motor Sport"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/et_nama"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nama Motor"
+        android:textSize="21sp" />
+
+    <EditText
+        android:id="@+id/et_merk"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Merk"
+        android:textSize="21sp" />
+
+    <EditText
+        android:id="@+id/et_mesin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Mesin"
+        android:textSize="21sp" />
+    <EditText
+        android:id="@+id/et_tahun"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Tahun"
+        android:textSize="21sp" />
+
+    <EditText
+        android:id="@+id/et_harga"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Harga"
+        android:textSize="21sp" />
+
+
+    <Button
+        android:id="@+id/btn_Ubah"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="16dp"
+        android:text="Ubah"
+        android:textSize="21sp" />
+
+</LinearLayout>
