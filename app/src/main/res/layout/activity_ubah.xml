@@ -52,9 +52,16 @@
         android:hint="Harga"
         android:textSize="21sp" />
 
+    <EditText
+        android:id="@+id/et_foto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Link Foto"
+        android:textSize="21sp"/>
+
 
     <Button
-        android:id="@+id/btn_Ubah"
+        android:id="@+id/btn_ubah"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_marginTop="16dp"

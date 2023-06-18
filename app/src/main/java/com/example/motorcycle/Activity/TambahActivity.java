@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.motorcycle.API.APIRequestData;
@@ -18,8 +19,8 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class TambahActivity extends AppCompatActivity {
-    private  String nama, merk, mesin, tahun, harga;
-    private EditText etNama, etMerk, etMesin, etTahun, etHarga;
+    private  String nama, merk, mesin, tahun, harga, foto;
+    private EditText etNama, etMerk, etMesin, etTahun, etHarga, etFoto;
     private Button btnSimpan;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +32,8 @@ public class TambahActivity extends AppCompatActivity {
         etMesin =findViewById(R.id.et_mesin);
         etTahun = findViewById(R.id.et_tahun);
         etHarga = findViewById(R.id.et_harga);
+        etFoto = findViewById(R.id.et_foto);
+
 
         btnSimpan = findViewById(R.id.btn_simpan);
 
@@ -42,6 +45,7 @@ public class TambahActivity extends AppCompatActivity {
                 mesin = etMesin.getText().toString();
                 tahun = etTahun.getText().toString();
                 harga = etHarga.getText().toString();
+                foto = etFoto.getText().toString();
 
                 if (nama.trim().isEmpty()){
                     etNama.setError("Nama Tidak Boleh Kosong!!!");
@@ -57,9 +61,11 @@ public class TambahActivity extends AppCompatActivity {
                 }
                 else if (harga.trim().isEmpty()){
                     etHarga.setError("Harga Tidak Boleh Kosong!!!");
+                } else if (foto.trim().isEmpty()){
+                    etFoto.setError("Link Foto Tidak Boleh Kosong!!!");
                 }
                 else {
-
+                    tambahMotor();
                 }
 
             }
@@ -67,7 +73,7 @@ public class TambahActivity extends AppCompatActivity {
     }
     private void tambahMotor() {
         APIRequestData ARD = RetroServer.konekRetrofit().create(APIRequestData.class);
-        Call<ModelResponse> proses = ARD.ardCreate(nama, merk, mesin, tahun, harga); //Ambil dari Main Activity, Auto Import
+        Call<ModelResponse> proses = ARD.ardCreate(nama, merk, mesin, tahun, harga, foto); //Ambil dari Main Activity, Auto Import
 
         proses.enqueue(new Callback<ModelResponse>() {
             @Override

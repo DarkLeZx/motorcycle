@@ -19,9 +19,9 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class UbahActivity extends AppCompatActivity {
-    private  String yId, yNama, yMerk, yMesin, yTahun, yHarga;
-    private String nama, merk, mesin, tahun, harga;
-    private EditText etNama, etMerk, etMesin, etTahun, etHarga;
+    private  String yId, yNama, yMerk, yMesin, yTahun, yHarga,yFoto;
+    private String nama, merk, mesin, tahun, harga, foto;
+    private EditText etNama, etMerk, etMesin, etTahun, etHarga, etFoto;
     private Button btnUbah;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,12 +35,23 @@ public class UbahActivity extends AppCompatActivity {
         yMesin = ambil.getStringExtra("xMesin");
         yTahun = ambil.getStringExtra("xTahun");
         yHarga = ambil.getStringExtra("xHarga");
+        yFoto = ambil.getStringExtra("xFoto");
+
+        etNama = findViewById(R.id.et_nama);
+        etMerk = findViewById(R.id.et_merk);
+        etMesin = findViewById(R.id.et_mesin);
+        etTahun = findViewById(R.id.et_tahun);
+        etHarga = findViewById(R.id.et_harga);
+        etFoto = findViewById(R.id.et_foto);
+
+        btnUbah = findViewById(R.id.btn_ubah);
 
         etNama.setText(yNama);
         etMerk.setText(yMerk);
         etMesin.setText(yMesin);
         etTahun.setText(yTahun);
         etHarga.setText(yHarga);
+        etFoto.setText(yFoto);
 
         btnUbah.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,6 +61,7 @@ public class UbahActivity extends AppCompatActivity {
                 mesin = etMesin.getText().toString();
                 tahun = etTahun.getText().toString();
                 harga = etHarga.getText().toString();
+                foto = etFoto.getText().toString();
 
                 if (nama.trim().isEmpty()) {
                     etNama.setError("Nama Tidak Boleh Kosong");
@@ -61,7 +73,9 @@ public class UbahActivity extends AppCompatActivity {
                     etTahun.setError("Tahun Tidak Boleh Kosong");
                 }else if (harga.trim().isEmpty()) {
                     etHarga.setError("Harga Tidak Boleh Kosong");
-                }else{
+                }else if (foto.trim().isEmpty()) {
+                    etFoto.setError("Link Foto Tidak Boleh Kosong");
+                } else{
                     ubahMotor();
                 }
 
@@ -70,7 +84,7 @@ public class UbahActivity extends AppCompatActivity {
     }
     private void ubahMotor(){
         APIRequestData ARD = RetroServer.konekRetrofit().create(APIRequestData.class);
-        Call<ModelResponse> proses = ARD.ardUpdate(yId,nama, merk, mesin, tahun, harga); //Ambil dari Main Activity, Auto Import
+        Call<ModelResponse> proses = ARD.ardUpdate(yId,nama, merk, mesin, tahun, harga, foto); //Ambil dari Main Activity, Auto Import
 
         proses.enqueue(new Callback<ModelResponse>() {
             @Override

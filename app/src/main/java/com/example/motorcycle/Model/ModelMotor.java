@@ -1,7 +1,13 @@
 package com.example.motorcycle.Model;
 
 public class ModelMotor {
-    private String id, nama, merk, mesin, tahun, harga;
+    private String id;
+    private String nama;
+    private String merk;
+    private String mesin;
+    private String tahun;
+    private String harga;
+    private String foto;
 
     public String getId() {
         return id;
@@ -25,5 +31,9 @@ public class ModelMotor {
 
     public String getHarga() {
         return harga;
+    }
+
+    public String getFoto() {
+        return foto;
     }
 }

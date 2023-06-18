@@ -14,7 +14,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_margin="16dp"
         android:gravity="center_horizontal"
-        android:text="Tambah Makanan Kuliner"
+        android:text="Tambah Motor Sport"
         android:textSize="25sp"
         android:textStyle="bold" />
 
@@ -22,7 +22,7 @@
         android:id="@+id/et_nama"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Nama Makanan"
+        android:hint="Nama Motor"
         android:textSize="21sp" />
 
     <EditText
@@ -51,6 +51,12 @@
         android:layout_height="wrap_content"
         android:hint="Harga"
         android:textSize="21sp" />
+    <EditText
+        android:id="@+id/et_foto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Link Foto"
+        android:textSize="21sp"/>
 
     <Button
         android:id="@+id/btn_simpan"

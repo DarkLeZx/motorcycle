@@ -19,7 +19,8 @@ public interface APIRequestData {
             @Field("merk") String merk,
             @Field("mesin") String mesin,
             @Field("tahun") String tahun,
-            @Field("harga") String harga
+            @Field("harga") String harga,
+            @Field("foto") String foto
     );
 
     @FormUrlEncoded
@@ -30,7 +31,8 @@ public interface APIRequestData {
             @Field("merk") String merk,
             @Field("mesin") String mesin,
             @Field("tahun") String tahun,
-            @Field("harga") String harga
+            @Field("harga") String harga,
+            @Field("foto") String foto
     );
 
     @FormUrlEncoded
