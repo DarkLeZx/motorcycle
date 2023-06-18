@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bgmoto"
+    android:layout_margin="6dp"
+    tools:context=".Activity.AboutMe">
+
+    <TextView
+        android:id="@+id/tv_judul_aboutMe"
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="The Developer of this App"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        />
+    <ImageView
+        android:id="@+id/iv_foto_depniel"
+        android:layout_marginTop="70dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/img_depniel"/>
+    <TextView
+        android:id="@+id/nama_depniel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dep'Niel Sinaga"
+        android:layout_marginTop="15dp"
+        android:textSize="20sp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/iv_foto_depniel"/>
+
+    <ImageView
+        android:id="@+id/iv_mdp"
+        android:layout_width="250dp"
+        android:layout_height="230dp"
+        android:background="@drawable/logo_mdp"
+        android:layout_marginBottom="10dp"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@id/tv_deskripsi"/>
+    <TextView
+        android:id="@+id/tv_deskripsi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="PROJECT UAS \n  PEMROGRAMAN APLIKASI BERGERAK II \n UNIVERSITAS MULTI DATA PALEMBANG"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="30dp"
+        style="@style/TextAppearance.AppCompat.Medium"
+        />
+</RelativeLayout>
